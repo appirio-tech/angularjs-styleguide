@@ -4,6 +4,44 @@ Much of this comes from a fork of [John Papa's AngularJS Styleguide](https://git
 
 # General Guidelines
 
+- General AngularJS development guidelines can be found on the [AngularJS website](https://docs.angularjs.org/guide)
+- For JS generally: 2 spaces NO tabs
+- All html should be contained in directives and templates 
+- All DOM manipulation should be handled by directives. See the
+  [Development Guide](https://docs.angularjs.org/guide/directive) for an example
+  directive which manipulates the DOM.
+- Services should use Restangular (https://github.com/mgonto/restangular)
+- Tables should use ngGrid: http://angular-ui.github.io/ng-grid/
+- The use of external libraries is encourged but they must be approved before use.
+- Use the Angular Loading Bar while the page is being loaded
+  (http://chieffancypants.github.io/angular-loading-bar/)
+
+## Approved AngularJS libraries
+
+- ui-router for routing: https://github.com/angular-ui/ui-router
+- ng-grid for tables: http://angular-ui.github.io/ng-grid/
+- Restangular for AJAX requests: https://github.com/mgonto/restangular
+- Angular Loading Bar for making AJAX requests less awkward: http://chieffancypants.github.io/angular-loading-bar/
+
+## Other guidelines
+
+- Each file should be wrapped in an anonymous function so as not to pollute
+  the global namespace
+- Each file should contain one component (write ["Ravioli Code"](http://www.johnpapa.net/spapost6/))
+- Logic belongs in services
+- Controllers should be named like `<description>Ctrl`
+  - e.g., a controller for the list of registrants might be called
+    `RegistrantsListCtrl`
+- You should use getters and setters and break modules into logical components
+  where applicable
+  - e.g., for the new `challenges` module, the main module should be created
+    like: `angular.module('challenges', [...])`
+    - listings components can be namespaced like
+      `angular.module('challenges').controller('listings.ListingCtrl')`
+  - when an application doesn't have several (large) components, namespacing is
+    unnecessary
+
+
 ## See the Styles in a Sample App
 While this guide explains the *what*, *why* and *how*, I find it helpful to see them in practice. This guide is accompanied by a sample application that follows these styles and patterns. You can find the [sample application (named modular) here](https://github.com/johnpapa/ng-demos) in the `modular` folder. Feel free to grab it, clone it, or fork it. [Instructions on running it are in its readme](https://github.com/johnpapa/ng-demos/tree/master/modular).
 
