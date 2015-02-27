@@ -10,8 +10,7 @@ Much of this comes from a fork of [John Papa's AngularJS Styleguide](https://git
 - All DOM manipulation should be handled by directives. See the
   [Development Guide](https://docs.angularjs.org/guide/directive) for an example
   directive which manipulates the DOM.
-- Services should use Restangular (https://github.com/mgonto/restangular)
-- Tables should use ngGrid: http://angular-ui.github.io/ng-grid/
+- Tables should use ngGrid: http://angular-ui.github.io/ng-grid/ (under review)
 - The use of external libraries is encourged but they must be approved before use.
 - Use the Angular Loading Bar while the page is being loaded
   (http://chieffancypants.github.io/angular-loading-bar/)
@@ -19,8 +18,7 @@ Much of this comes from a fork of [John Papa's AngularJS Styleguide](https://git
 ## Approved AngularJS libraries
 
 - ui-router for routing: https://github.com/angular-ui/ui-router
-- ng-grid for tables: http://angular-ui.github.io/ng-grid/
-- Restangular for AJAX requests: https://github.com/mgonto/restangular
+- ng-grid for tables: http://angular-ui.github.io/ng-grid/ (under review)
 - Angular Loading Bar for making AJAX requests less awkward: http://chieffancypants.github.io/angular-loading-bar/
 
 ## Other guidelines
