@@ -18,8 +18,6 @@ Much of this comes from a fork of [John Papa's AngularJS Styleguide](https://git
 ## Approved AngularJS libraries
 
 - ui-router for routing: https://github.com/angular-ui/ui-router
-- ng-grid for tables: http://angular-ui.github.io/ng-grid/ (under review)
-- Angular Loading Bar for making AJAX requests less awkward: http://chieffancypants.github.io/angular-loading-bar/
 
 ## Other guidelines
 
@@ -443,23 +441,24 @@ While this guide explains the *what*, *why* and *how*, I find it helpful to see 
   function Sessions() {
       var vm = this;
 
-      vm.gotoSession = gotoSession;
-      vm.refresh = refresh;
-      vm.search = search;
+      // call out the functions just so devs can see them up top
+      vm.gotoSession;
+      vm.refresh;
+      vm.search;
       vm.sessions = [];
       vm.title = 'Sessions';
 
       ////////////
 
-      function gotoSession() {
+      vm.gotoSession = function() {
         /* */
       }
 
-      function refresh() {
+      vm.refresh = function() {
         /* */
       }
 
-      function search() {
+      vm.search = function() {
         /* */
       }
   ```
@@ -509,11 +508,6 @@ While this guide explains the *what*, *why* and *how*, I find it helpful to see 
 
     *Why?*: Placing the implementation details of a function later in the file moves that complexity out of view so you can see the important stuff up top.
 
-    *Why?*: Function declaration are hoisted so there are no concerns over using a function before it is defined (as there would be with function expressions).
-
-    *Why?*: You never have to worry with function declarations that moving `var a` before `var b` will break your code because `a` depends on `b`.
-
-    *Why?*: Order is critical with function expressions
 
   ```javascript
   /**
@@ -555,7 +549,7 @@ While this guide explains the *what*, *why* and *how*, I find it helpful to see 
   function Avengers(dataservice, logger) {
       var vm = this;
       vm.avengers = [];
-      vm.getAvengers = getAvengers;
+      vm.getAvengers;
       vm.title = 'Avengers';
 
       activate();
@@ -566,7 +560,7 @@ While this guide explains the *what*, *why* and *how*, I find it helpful to see 
           });
       }
 
-      function getAvengers() {
+      vm.getAvengers = function() {
           return dataservice.getAvengers().then(function(data) {
               vm.avengers = data;
               return vm.avengers;
